@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cumpleaños</title>
+    <!-- Fuente Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Pantalla de Bienvenida -->
+      <div id="welcome-screen">
+        <h1>¡Feliz Cumpleaños, Amor!</h1>
+        <p>Ingresa para descubrir todos nuestros hermosos recuerdos.</p>
+        <button id="start-btn">Comenzar</button>
+      </div>
+
+      <!-- Pantalla del juego -->
+      <div id="game-screen" style="display: none">
+        <h2>Te Amo</h2>
+        <p id="question">¿Dónde fue nuestra primera cita?</p>
+        <input type="text" id="answer" placeholder="Tu respuesta aquí..." />
+        <button id="submit-btn" onclick="checkAnswer()">Enviar</button>
+        <p id="hint" style="display: none; color: #000000">Esta es una pista</p>
+
+        <p id="result"></p>
+
+        <!-- Imágenes que se desbloquearán -->
+        <div id="media-content" style="display: none">
+          <img
+            id="memory-img"
+            src=""
+            alt="Recuerdo"
+            style="display: none; width: 300px"
+          />
+        </div>
+
+        <!-- Botón de siguiente -->
+        <button id="next-btn" style="display: none" onclick="nextQuestion()">
+          Siguiente
+        </button>
+      </div>
+
+      <!-- Pantalla de celebración (video final) -->
+      <div id="celebration-screen" style="display: none">
+        <h2>¡Bien Amor! Ahora mira el video.</h2>
+        <video id="celebration-video" width="300" controls>
+          <source src="Emi-Cumple.mp4" type="video/mp4" />
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+        <!-- Botón de reiniciar debajo del video -->
+        <button
+          id="restart-btn"
+          style="display: block; margin-top: 20px"
+          onclick="restartGame()"
+        >
+          Reiniciar
+        </button>
+      </div>
+    </div>
+
+    <!-- Agregar música de fondo -->
+    <audio id="background-music" autoplay loop>
+      <source src="musica-fondo.mp3" type="audio/mpeg" />
+      Tu navegador no soporta el audio.
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
